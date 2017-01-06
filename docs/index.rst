@@ -26,10 +26,12 @@ If an application requires any dependencies that aren't in its runtime, they can
 
 Both runtimes and app bundles can be installed per-user and system-wide.
 
-Contents:
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
+   :glob:
 
    getting-started
    building-simple-apps
