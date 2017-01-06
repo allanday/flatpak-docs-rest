@@ -3,7 +3,7 @@ Flatpak Builder
 
 If an application requires additional dependencies that aren't provided by its runtime, Flatpak allows them to be bundled as part of the app itself. This requires building each module inside the application build directory, which can be a lot of work. The ``flatpak-builder`` tool can automate this multi-step build process.
 
-flatpak-builder takes care of the routine commands used to build an app and any bundled libraries, thus allowing application building to be automated. To do this, it expects modules to be built in a standard manner by following what is called the `Build API <https://github.com/cgwalters/build-api/>_. If any modules don't conform to this API, they will need to be modified.
+flatpak-builder takes care of the routine commands used to build an app and any bundled libraries, thus allowing application building to be automated. To do this, it expects modules to be built in a standard manner by following what is called the `Build API <https://github.com/cgwalters/build-api/>`_. If any modules don't conform to this API, they will need to be modified.
 
 Manifests
 ---------
