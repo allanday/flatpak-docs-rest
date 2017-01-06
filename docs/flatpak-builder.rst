@@ -1,16 +1,16 @@
 Flatpak Builder
 ===============
 
-If an application requires additional dependencies that aren't provided by its runtime, Flatpak allows them to be bundled as part of the app itself. This requires building each module inside the application build directory, which can be a lot of work. The `flatpak-builder` tool can automate this multi-step build process.
+If an application requires additional dependencies that aren't provided by its runtime, Flatpak allows them to be bundled as part of the app itself. This requires building each module inside the application build directory, which can be a lot of work. The ``flatpak-builder`` tool can automate this multi-step build process.
 
-flatpak-builder takes care of the routine commands used to build an app and any bundled libraries, thus allowing application building to be automated. To do this, it expects modules to be built in a standard manner by following what is called the [Build API](https://github.com/cgwalters/build-api). If any modules don't conform to this API, they will need to be modified.
+flatpak-builder takes care of the routine commands used to build an app and any bundled libraries, thus allowing application building to be automated. To do this, it expects modules to be built in a standard manner by following what is called the `Build API <https://github.com/cgwalters/build-api/>_. If any modules don't conform to this API, they will need to be modified.
 
 Manifests
 ---------
 
-The input to flatpak-builder is a json file that describes the parameters for building an app, as well as each of the modules to be bundled. This file is called the manifest. Module sources can be of several types, including .tar or .zip archives, Git or Bzr repositories, patch files or shell commands that are run.
+The input to flatpak-builder is a json file that describes the parameters for building an app, as well as each of the modules to be bundled. This file is called the manifest. Module sources can be of several types, including ``.tar`` or ``.zip`` archives, Git or Bzr repositories, patch files or shell commands that are run.
 
-The GNOME Dictionary manifest is short, because the only module is the application itself:::
+The GNOME Dictionary manifest is short, because the only module is the application itself::
 
       {
         "app-id": "org.gnome.Dictionary",
