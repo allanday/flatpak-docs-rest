@@ -51,9 +51,6 @@ Useful sandbox permissions
 
 Flatpak provides an array of options for controlling sandbox permissions. The following are some of the most useful.
 
-Filesystem permissions
-^^^^^^^^^^^^^^^^^^^^^^
-
 ===================================================  ===========================================
 ``--filesystem=host``                                Access all files
 ``--filesystem=home``                                Access the home directory
@@ -61,12 +58,6 @@ Filesystem permissions
 ``--filesystem=/some/dir --filesystem=~/other/dir``  Access paths
 ``--filesystem=xdg-download``                        Access the XDG download directory
 ``--nofilesystem=...``                               Undo some of the above
-===================================================  ===========================================
-
-Other permissions
-^^^^^^^^^^^^^^^^^
-
-===================================================  ===========================================
 ``--socket=x11 --share=ipc``                         Show windows using X11 [#f1]_
 ``--device=dri``                                     OpenGL rendering
 ``--socket=wayland``                                 Show windows using Wayland
