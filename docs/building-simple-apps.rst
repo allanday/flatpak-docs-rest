@@ -10,7 +10,7 @@ As described above, an SDK is a special type of runtime that is used to build ap
   
   $ flatpak remote-add --from gnome https://sdk.gnome.org/gnome.flatpakrepo
 
-You can now download and install the runtime and SDK. (If you have already completed the tutorial on the Flatpak homepage, you will already have the runtime installed.)::
+You can now download and install the runtime and SDK. (If you have already completed the tutorial on the Flatpak homepage, you will already have the runtime installed.) ::
 
   $ flatpak install gnome org.gnome.Platform//3.22 org.gnome.Sdk//3.22
  
@@ -19,7 +19,7 @@ This might be a good time to try installing an application and having a look 'un
   $ flatpak remote-add --from gnome-apps https://sdk.gnome.org/gnome-apps.flatpakrepo
   $ flatpak install gnome-apps org.gnome.gedit
 
-You can now use the following command to get a shell in the 'devel sandbox':
+You can now use the following command to get a shell in the 'devel sandbox'::
 
   $ flatpak run --devel --command=bash org.gnome.gedit
 
