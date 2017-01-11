@@ -51,53 +51,9 @@ Useful sandbox permissions
 
 Flatpak provides an array of options for controlling sandbox permissions. The following are some of the most useful.
 
-Grant access to files::
-
-  --filesystem=host    # All files
-  --filesystem=home    # Home directory
-  --filesystem=home:ro # Home directory, read-only
-  --filesystem=/some/dir --filesystem=~/other/dir # Paths
-  --filesystem=xdg-download # The XDG download directory
-  --nofilesystem=...   # Undo some of the above
-
-Allow the application to show windows using X11::
-
-  --socket=x11 --share=ipc
-
-Note: ``–share=ipc`` means that the sandbox shares IPC namespace with the host. This is not necessarily required, but without it the X shared memory extension will not work, which is very bad for X performance.
-
-Allow OpenGL rendering::
-
-  --device=dri
-
-Allow the application to show windows using Wayland::
-
-  --socket=wayland
-
-Allow the application to play sounds using PulseAudio::
-
-  --socket=pulseaudio
-
-Allow the application to access the network::
-
-  --share=network
-
-Note: giving network access also grants access to all host services listening on abstract Unix sockets (due to how network namespaces work), and these have no permission checks. This unfortunately affects e.g. the X server and the session bus which listens to abstract sockets by default. A secure distribution should disable these and just use regular sockets.
-
-Allow the application talk to a named service on the session bus::
-
-  --talk-name=org.freedesktop.secrets
-
-Allow the application talk to a named service on the system bus::
-
-  --system-talk-name=org.freedesktop.GeoClue2
-
-Allow the application unlimited access to all of D-Bus::
-
-  --socket=system-bus --socket=session-bus
-
-===================================================  ===========================================
 Filesystem permissions
+^^^^^^^^^^^^^^^^^^^^^^
+
 ===================================================  ===========================================
 ``--filesystem=host``                                Access all files
 ``--filesystem=home``                                Access the home directory
@@ -106,18 +62,23 @@ Filesystem permissions
 ``--filesystem=xdg-download``                        Access the XDG download directory
 ``--nofilesystem=...``                               Undo some of the above
 ===================================================  ===========================================
-Other permissions:
+
+Other permissions
+^^^^^^^^^^^^^^^^^
+
 ===================================================  ===========================================
-``--socket=x11 --share=ipc``                         Show windows using X11 [1]
+``--socket=x11 --share=ipc``                         Show windows using X11 [#f1]_
 ``--device=dri``                                     OpenGL rendering
 ``--socket=wayland``                                 Show windows using Wayland
 ``--socket=pulseaudio``                              Play sounds using PulseAudio
-``--share=network``                                  Access the network [2]
+``--share=network``                                  Access the network [#f2]_
 ``--talk-name=org.freedesktop.secrets``              Talk to a named service on the session bus
 ``--system-talk-name=org.freedesktop.GeoClue2``      Talk to a named service on the system bus
 ``--socket=system-bus --socket=session-bus``         Unlimited access to all of D-Bus
 ===================================================  ===========================================
 
-[1] ``–share=ipc`` means that the sandbox shares IPC namespace with the host. This is not necessarily required, but without it the X shared memory extension will not work, which is very bad for X performance.
-[2] Giving network access also grants access to all host services listening on abstract Unix sockets (due to how network namespaces work), and these have no permission checks. This unfortunately affects e.g. the X server and the session bus which listens to abstract sockets by default. A secure distribution should disable these and just use regular sockets.
+.. rubric:: Footnotes
+
+.. [#f1] ``–share=ipc`` means that the sandbox shares IPC namespace with the host. This is not necessarily required, but without it the X shared memory extension will not work, which is very bad for X performance.
+.. [#f2] Giving network access also grants access to all host services listening on abstract Unix sockets (due to how network namespaces work), and these have no permission checks. This unfortunately affects e.g. the X server and the session bus which listens to abstract sockets by default. A secure distribution should disable these and just use regular sockets.
 
