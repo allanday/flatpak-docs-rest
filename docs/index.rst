@@ -16,4 +16,5 @@ Contents
    anatomy-of-a-flatpak-app
    building-simple-apps
    flatpak-builder
+   working-with-the-sandbox
    hosting-a-repository
