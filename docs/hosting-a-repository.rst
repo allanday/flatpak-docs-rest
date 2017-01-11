@@ -14,7 +14,7 @@ By default OSTree refuses to pull from a remote repository that is not signed. T
 
 Note that GPG signatures are required for the user to be able to install trusted remotes that can be updated from without needing to be root.
 
-OSTree requires signatures for every commit and on repository summary files. These objects are created by the ``build-update-repo`` and ``build-export`` commands, as well as indirectly by ``flatpak-builder``. A GPG key should therefore be passed to each of these commands, and optionally the GPG home directory to use. For example:
+OSTree requires signatures for every commit and on repository summary files. These objects are created by the ``build-update-repo`` and ``build-export`` commands, as well as indirectly by ``flatpak-builder``. A GPG key should therefore be passed to each of these commands, and optionally the GPG home directory to use. For example::
 
   $ flatpak build-export --gpg-sign=KEYID --gpg-homedir=/some/dir appdir repo
 
@@ -27,20 +27,17 @@ A convenient way to point users to the repository containing your application is
 
 A typical ``.flatpakrepo`` file looks like this::
 
-  <pre>
   [Flatpak Repo]
   Title=GEdit
   Url=http://sdk.gnome.org/repo-apps/
   GPGKey=mQENBFUUCGcBCAC/K9WeV4xCaKr3...
-  </pre>
 
 If your repository contains just a single application, it may be more convenient to use a .flatpakref file instead, which contains enough information to add the repository and install the application at the same time. To install a ``.flatpakref`` file manually, use the command::
 
   $ flatpak install --from foo.flatpakref
 
-A typical ``.flatpakref`` file looks like this:
+A typical ``.flatpakref`` file looks like this::
 
-  <pre>
   [Flatpak Ref]
   Title=GEdit
   Name=org.gnome.gedit
@@ -48,7 +45,6 @@ A typical ``.flatpakref`` file looks like this:
   Url=http://sdk.gnome.org/repo-apps/
   IsRuntime=False
   GPGKey=mQENBFUUCGcBCAC/K9WeV4xCaKr3...
-  </pre>
 
 Note that the GPGKey key in these files contains the base64-encoded GPG key, which you can get with the following command::
 
@@ -62,11 +58,11 @@ Hosting a repository is the preferred way to distribute an application, but some
   $ flatpak build-bundle [OPTION...] LOCATION FILENAME NAME [BRANCH]
   $ flatpak build-import-bundle [OPTION...] LOCATION FILENAME
 
-For example, to create a bundle named `dictionary.flatpak` containing the GNOME dictionary app from the repository at ~/repositories/apps, run:
+For example, to create a bundle named `dictionary.flatpak` containing the GNOME dictionary app from the repository at ~/repositories/apps, run::
 
   $ flatpak build-bundle ~/repositories/apps dictionary.flatpak org.gnome.Dictionary
 
-To import the bundle into a repository on another machine, run:
+To import the bundle into a repository on another machine, run::
 
   $ flatpak build-import-bundle ~/my-apps dictionary.flatpak
 
