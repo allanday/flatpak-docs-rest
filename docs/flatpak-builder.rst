@@ -76,13 +76,13 @@ This will:
 * Finish the build, by setting permissions (in this case giving access to X and the network)
 * Export the resulting build to the tutorial repository, which contains the Dictionary app that was previously installed
 
-  flatpak-builder will also do some other useful things, like creating a separately installable debug runtime (called `org.gnome.Dictionary.Debug` in this case) and a separately installable translation runtime (called `org.gnome.Dictionary.Locale`).
+``flatpak-builder`` will also do some other useful things, like creating a separately installable debug runtime (called `org.gnome.Dictionary.Debug` in this case) and a separately installable translation runtime (called `org.gnome.Dictionary.Locale`).
 
 It is now possible to update the installed version of the Dictionary application with the new version that was built and exported by ``flatpak-builder``::
 
   $ flatpak --user update org.gnome.Dictionary
 
-To check that the application has been successfully updated, you can compare the sha256 commit of the installed app with the commit ID that was printed by flatpak-builder:
+To check that the application has been successfully updated, you can compare the sha256 commit of the installed app with the commit ID that was printed by ``flatpak-builder``::
 
   $ flatpak info org.gnome.Dictionary
   $ flatpak info org.gnome.Dictionary.Locale
