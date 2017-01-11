@@ -13,6 +13,7 @@ Contents
    :glob:
 
    introduction
+   anatomy-of-a-flatpak-app
    building-simple-apps
    flatpak-builder
    hosting-a-repository
