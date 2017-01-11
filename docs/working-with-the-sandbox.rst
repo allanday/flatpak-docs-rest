@@ -31,7 +31,7 @@ Note that in this example access to the filesystem wasn't granted. This can be t
 
   $ flatpak run --command=ls org.gnome.Dictionary ~/
   
-``build-finish` allows a whole range of resources to be added to an application. Run ``flatpak build-finish --help`` to view the full list.
+``build-finish`` allows a whole range of resources to be added to an application. Run ``flatpak build-finish --help`` to view the full list.
 
 There are several ways to override the permissions that are set in an application's metadata file. One of these is to override them using flatpak run, which accepts the same parameters as ``build-finish``. For example, this will let the Dictionary application see your home directory::
 
