@@ -1,7 +1,7 @@
 Introduction to Flatpak
 =======================
 
-Key Concepts
+Key concepts
 ------------
 
 Flatpak is best understood through its key concepts: runtimes, bundled libraries, SDKs and sandboxes. These help to explain how Flatpak differs from traditional application distribution on Linux, as well as the framework's capabilities.
@@ -15,7 +15,7 @@ Each application must be built against a runtime, and this runtime must be insta
 
 Flatpak identifies runtimes (as well as SDKs and applications) by a triple of name/arch/branch. The name is expected to be in inverse-dns notation, which needs to match the D-Bus name used for the application. For example: ``org.gnome.Sdk/x86_64/3.14`` or ``org.gnome.Builder/i386/master``.
 
-Bundled Libraries
+Bundled libraries
 ^^^^^^^^^^^^^^^^^
 
 If an application requires any dependencies that aren't in its runtime, they can be bundled along with the application itself. This allows apps to use dependencies that aren't available in a distribution, or to use a different version of a dependency from the one that's installed on the host.
@@ -50,7 +50,7 @@ Flatpak tries to avoid reinventing the wheel. We build on existing technologies 
 * The `OSTree <https://ostree.readthedocs.io/en/latest/>`_ system for versioning and distributing filesystem trees
 * `Appstream <https://www.freedesktop.org/software/appstream/docs/>`_ metadata that makes Flatpak apps show up nicely in software-center applications
 
-The ``flatpak`` Command
+The ``flatpak`` command
 -----------------------
 
 ``flatpak`` is the tool that is used to install, remove and update runtimes and applications. It can also be used to view what is currently installed, and has commands for building and distributing application bundles. ``flatpak --help`` provides a full list of available commands.
