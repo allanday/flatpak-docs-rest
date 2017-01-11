@@ -37,18 +37,18 @@ Technologies
 
 Flatpak tries to avoid reinventing the wheel. We build on existing technologies where it makes sense. Many of the important ingredients for Flatpak are inherited from Linux containers and related initiatives:
 
- * The `bubblewrap <https://github.com/projectatomic/bubblewrap>`_ utility from `Project Atomic <http://www.projectatomic.io/>`_, which lets unprivileged users set up and run containers, using kernel features such as:
+* The `bubblewrap <https://github.com/projectatomic/bubblewrap>`_ utility from `Project Atomic <http://www.projectatomic.io/>`_, which lets unprivileged users set up and run containers, using kernel features such as:
 
   * Cgroups
   * Namespaces
   * Bind mounts
   * Seccomp rules
 
- * `systemd <https://www.freedesktop.org/wiki/Software/systemd/>`_ to set up cgroups for our sandbox
- * `D-Bus <https://www.freedesktop.org/wiki/Software/dbus/>`_, a well-established way to provide high-level APIs to application
- * The OCI format from the `Open Container Initiative <https://www.opencontainers.org/>`_, as a convenient transport format for single-file bundles
- * The `OSTree <https://ostree.readthedocs.io/en/latest/>`_ system for versioning and distributing filesystem trees
- * `Appstream <https://www.freedesktop.org/software/appstream/docs/>`_ metadata that makes Flatpak apps show up nicely in software-center applications
+* `systemd <https://www.freedesktop.org/wiki/Software/systemd/>`_ to set up cgroups for our sandbox
+* `D-Bus <https://www.freedesktop.org/wiki/Software/dbus/>`_, a well-established way to provide high-level APIs to application
+* The OCI format from the `Open Container Initiative <https://www.opencontainers.org/>`_, as a convenient transport format for single-file bundles
+* The `OSTree <https://ostree.readthedocs.io/en/latest/>`_ system for versioning and distributing filesystem trees
+* `Appstream <https://www.freedesktop.org/software/appstream/docs/>`_ metadata that makes Flatpak apps show up nicely in software-center applications
 
 The ``flatpak`` Command
 -----------------------

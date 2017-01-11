@@ -32,11 +32,11 @@ To create an application, the first step is to use the build-init command. This 
 
   $ flatpak build-init DIRECTORY APPNAME SDK RUNTIME [BRANCH]
 
- * `DIRECTORY` is the name of the directory that will be created to contain the application
- * `APPNAME` is the D-Bus name of the application
- * `SDK` is the name of the SDK that will be used to build the application
- * `RUNTIME` is the name of the runtime that will be required by the application
- * `BRANCH` is typically the version of the SDK and runtime that will be used
+* `DIRECTORY` is the name of the directory that will be created to contain the application
+* `APPNAME` is the D-Bus name of the application
+* `SDK` is the name of the SDK that will be used to build the application
+* `RUNTIME` is the name of the runtime that will be required by the application
+* `BRANCH` is typically the version of the SDK and runtime that will be used
 
 For example, to build the GNOME Dictionary application using the GNOME 3.22 SDK, the command would look like::
 
@@ -75,7 +75,7 @@ Once an application has been built, the ``build-finish`` command needs to be use
 
   $ flatpak build-finish dictionary --socket=x11 --share=network --command=gnome-dictionary
   
-  At this point you have successfully built a flatpak and prepared it to be run. To test the app, you need to export the Dictionary to a repository, add that repository and then install and run the app::
+At this point you have successfully built a flatpak and prepared it to be run. To test the app, you need to export the Dictionary to a repository, add that repository and then install and run the app::
 
   $ flatpak build-export repo dictionary
   $ flatpak --user remote-add --no-gpg-verify --if-not-exists tutorial-repo repo
