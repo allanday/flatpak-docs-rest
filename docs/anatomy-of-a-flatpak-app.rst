@@ -1,12 +1,12 @@
 Anatomy of a Flatpak Application
 ================================
 
-Each Flatpak app has the following basic structure::
+Each Flatpak app has the following basic structure:
 
+* ``metadata`` - a keyfile which provides information about the application, including information that is necessary for setting up the sandbox for running the application
 * ``/files`` - the files that make up the application
 * ``/files/bin`` - application binaries
 * ``/export`` - files which the host environment needs access to, such as the application's desktop file, icon and D-Bus service file
-* ``metadata`` - a keyfile which provides information about the application, including information that is necessary for setting up the sandbox for running the application
 
 A typical metadata file looks like this::
 
