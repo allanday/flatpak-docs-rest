@@ -23,7 +23,7 @@ You can now use the following command to get a shell in the 'devel sandbox'::
 
   $ flatpak run --devel --command=bash org.gnome.gedit
 
-This gives you an environment which has the application bundle mounted in `/app`, and the SDK it was built against mounted in `/usr`. You can explore these two directories to see what a typical flatpak looks like, as well as what is included in the SDK.
+This gives you an environment which has the application bundle mounted in ``/app``, and the SDK it was built against mounted in ``/usr``. You can explore these two directories to see what a typical flatpak looks like, as well as what is included in the SDK.
 
 Creating an app
 ---------------
