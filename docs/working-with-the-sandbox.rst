@@ -31,7 +31,7 @@ Note that in this example access to the filesystem wasn't granted. This can be t
 
   $ flatpak run --command=ls org.gnome.Dictionary ~/
   
-``build-finish`` allows a whole range of resources to be added to an application. Run ``flatpak build-finish --help`` to view the full list.
+build-finish allows a whole range of resources to be added to an application. Run ``flatpak build-finish --help`` to view the full list.
 
 There are several ways to override the permissions that are set in an application's metadata file. One of these is to override them using flatpak run, which accepts the same parameters as ``build-finish``. For example, this will let the Dictionary application see your home directory::
 
@@ -51,22 +51,22 @@ Useful sandbox permissions
 
 Flatpak provides an array of options for controlling sandbox permissions. The following are some of the most useful.
 
-===================================================  ===========================================
-``--filesystem=host``                                Access all files
-``--filesystem=home``                                Access the home directory
-``--filesystem=home:ro``                             Access the home directory, read-only
-``--filesystem=/some/dir --filesystem=~/other/dir``  Access paths
-``--filesystem=xdg-download``                        Access the XDG download directory
-``--nofilesystem=...``                               Undo some of the above
-``--socket=x11 --share=ipc``                         Show windows using X11 [#f1]_
-``--device=dri``                                     OpenGL rendering
-``--socket=wayland``                                 Show windows using Wayland
-``--socket=pulseaudio``                              Play sounds using PulseAudio
-``--share=network``                                  Access the network [#f2]_
-``--talk-name=org.freedesktop.secrets``              Talk to a named service on the session bus
-``--system-talk-name=org.freedesktop.GeoClue2``      Talk to a named service on the system bus
-``--socket=system-bus --socket=session-bus``         Unlimited access to all of D-Bus
-===================================================  ===========================================
+===============================================  ===========================================
+--filesystem=host                                Access all files
+--filesystem=home                                Access the home directory
+--filesystem=home:ro                             Access the home directory, read-only
+--filesystem=/some/dir --filesystem=~/other/dir  Access paths
+--filesystem=xdg-download                        Access the XDG download directory
+--nofilesystem=...                               Undo some of the above
+--socket=x11 --share=ipc                         Show windows using X11 [#f1]_
+--device=dri                                     OpenGL rendering
+--socket=wayland                                 Show windows using Wayland
+--socket=pulseaudio                              Play sounds using PulseAudio
+--share=network                                  Access the network [#f2]_
+--talk-name=org.freedesktop.secrets              Talk to a named service on the session bus
+--system-talk-name=org.freedesktop.GeoClue2      Talk to a named service on the system bus
+--socket=system-bus --socket=session-bus         Unlimited access to all of D-Bus
+===============================================  ===========================================
 
 .. rubric:: Footnotes
 

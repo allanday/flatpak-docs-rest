@@ -39,7 +39,7 @@ The GNOME Dictionary manifest is short, because the only module is the applicati
 Cleanup
 -------
 
-``flatpak-builder`` performs a cleanup phase after the build, which can be used to remove headers and development docs, among other things. Two properties in the manifest file can be used for this. First, a list of filename patterns can be included::
+flatpak-builder performs a cleanup phase after the build, which can be used to remove headers and development docs, among other things. Two properties in the manifest file can be used for this. First, a list of filename patterns can be included::
 
   "cleanup": [ "/include", "/bin/foo-*", "*.a" ]
 
@@ -52,19 +52,19 @@ Cleanup properties can be set on a per-module basis, and will then only match fi
 File renaming
 -------------
 
-Files that are exported by a flatpak must be named using the application ID. However, application's source files will typically not follow this convention. To get around this, ``flatpak-builder`` allows renaming application icons, desktop files and AppData files as a part of the build process, using the ``rename-icon``, ``rename-desktop-file`` and ``rename-appdata`` properties.
+Files that are exported by a flatpak must be named using the application ID. However, application's source files will typically not follow this convention. To get around this, flatpak-builder allows renaming application icons, desktop files and AppData files as a part of the build process, using the ``rename-icon``, ``rename-desktop-file`` and ``rename-appdata`` properties.
 
 Splitting things up
 -------------------
 
-By default, ``flatpak-builder`` splits off translations into a separate ``.Locale`` runtime, and debuginfo into a ``.Debug`` runtime, and adds these 'standard' extension points to the application metadata. You can turn this off with the ``separate-locales`` and ``no-debuginfo`` keys, but there shouldn't be any reason for it.
+By default, flatpak-builder splits off translations into a separate .Locale runtime, and debuginfo into a .Debug runtime, and adds these 'standard' extension points to the application metadata. You can turn this off with the ``separate-locales`` and ``no-debuginfo`` keys, but there shouldn't be any reason for it.
 
-When ``flatpak-builder`` exports the build into a repository, it automatically includes the ``.Locale`` and ``.Debug`` runtimes. If you do the exporting manually, don't forget to include them.
+When flatpak-builder exports the build into a repository, it automatically includes the .Locale`` and .Debug runtimes. If you do the exporting manually, don't forget to include them.
 
 Example
 -------
 
-You can try ``flatpak-builder`` for yourself, using the repository that was created in the previous section. To do this, place the manifest json from above into a file called ``org.gnome.Dictionary.json`` and run the following command::
+You can try flatpak-builder for yourself, using the repository that was created in the previous section. To do this, place the manifest json from above into a file called ``org.gnome.Dictionary.json`` and run the following command::
 
   $ flatpak-builder --repo=repo dictionary2 org.gnome.Dictionary.json
   
@@ -76,13 +76,13 @@ This will:
 * Finish the build, by setting permissions (in this case giving access to X and the network)
 * Export the resulting build to the tutorial repository, which contains the Dictionary app that was previously installed
 
-``flatpak-builder`` will also do some other useful things, like creating a separately installable debug runtime (called `org.gnome.Dictionary.Debug` in this case) and a separately installable translation runtime (called `org.gnome.Dictionary.Locale`).
+flatpak-builder will also do some other useful things, like creating a separately installable debug runtime (called `org.gnome.Dictionary.Debug` in this case) and a separately installable translation runtime (called ``org.gnome.Dictionary.Locale``).
 
-It is now possible to update the installed version of the Dictionary application with the new version that was built and exported by ``flatpak-builder``::
+It is now possible to update the installed version of the Dictionary application with the new version that was built and exported by flatpak-builder::
 
   $ flatpak --user update org.gnome.Dictionary
 
-To check that the application has been successfully updated, you can compare the sha256 commit of the installed app with the commit ID that was printed by ``flatpak-builder``::
+To check that the application has been successfully updated, you can compare the sha256 commit of the installed app with the commit ID that was printed by flatpak-builder::
 
   $ flatpak info org.gnome.Dictionary
   $ flatpak info org.gnome.Dictionary.Locale
