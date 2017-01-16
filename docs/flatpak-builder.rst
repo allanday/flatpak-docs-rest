@@ -78,7 +78,7 @@ This will:
 
 flatpak-builder will also do some other useful things, like creating a separately installable debug runtime (called `org.gnome.Dictionary.Debug` in this case) and a separately installable translation runtime (called ``org.gnome.Dictionary.Locale``).
 
-It is now possible to update the installed version of the Dictionary application with the new version that was built and exported by flatpak-builder::
+If you completed the tutorial in `Building Simple Apps`_, it is now possible to update the installed version of the Dictionary application with the new version that was built and exported by flatpak-builder::
 
   $ flatpak --user update org.gnome.Dictionary
 
